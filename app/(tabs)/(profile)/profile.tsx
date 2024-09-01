@@ -6,6 +6,7 @@ import { ExternalLink } from '@/components/ExternalLink';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { ProfileOption } from '@/components/ProfileOption';
 
 export default function TabTwoScreen() {
   return (
@@ -13,7 +14,12 @@ export default function TabTwoScreen() {
         <ThemedView style={styles.titleContainer}>
           <ThemedText type="title">Profile</ThemedText>
         </ThemedView>
-        <ThemedText>This app includes example code to help you get started.</ThemedText>
+        <ThemedText>Welcome to your profile!</ThemedText>
+        <ProfileOption title="Account">  
+          <ThemedView style={styles.headerImage}>
+            <ThemedText type="title">Account Settings</ThemedText>
+          </ThemedView>
+        </ProfileOption>
       </SafeAreaView>
   );
 }

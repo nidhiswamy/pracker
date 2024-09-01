@@ -15,18 +15,21 @@ export default function TabLayout() {
         headerShown: false,
       }}>
       <Tabs.Screen
-        name="index"
+        name="account"
         options={{
-          title: 'Home',
+          title: 'Account',
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
           ),
         }}
       />
       <Tabs.Screen
-        name="(profile)"
+        name="app-settings"
         options={{
-          title: 'Profile',
+          title: 'App Settings',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'person' : 'person-outline'} color={color} />
+          )
         }}
       />
     </Tabs>

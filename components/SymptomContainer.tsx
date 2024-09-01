@@ -5,6 +5,7 @@ import { Image, StyleSheet, TouchableOpacity, useColorScheme } from 'react-nativ
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { Colors } from '@/constants/Colors';
+import { Collapsible } from './Collapsible';
 
 interface SymptomContainerProps {
   symptoms: {
@@ -23,6 +24,7 @@ export function SymptomContainer({ symptoms }: SymptomContainerProps) {
         style={styles.heading}
         onPress={() => setIsOpen((value) => !value)}
         activeOpacity={0.8}>
+        <Collapsible title="Log your symptoms">
         <ThemedView style={styles.content}>
           {symptoms.map((symptom) => (
           <ThemedView style={styles.symptomContainer}>
@@ -31,6 +33,7 @@ export function SymptomContainer({ symptoms }: SymptomContainerProps) {
           </ThemedView>
           ))}
         </ThemedView>
+        </Collapsible>
       </TouchableOpacity>
     </ThemedView>
   );
@@ -44,7 +47,6 @@ const styles = StyleSheet.create({
   },
   content: {
     marginTop: 6,
-    marginLeft: 24,
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
@@ -58,7 +60,7 @@ const styles = StyleSheet.create({
   icon: {
     tintColor: 'white',
     backgroundColor: 'transparent',
-    width: 42,
-    height: 42,
+    width: 30,
+    height: 30,
   }
 });

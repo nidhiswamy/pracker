@@ -61,7 +61,6 @@ export default function HomeScreen() {
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">How are you feeling?</ThemedText>
-        <ThemedText type="defaultSemiBold">Log your symptoms</ThemedText>
         <ThemedText>
           <SymptomContainer symptoms={symptoms}/>
         </ThemedText>
