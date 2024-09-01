@@ -1,60 +1,91 @@
 import { Image, StyleSheet, Platform } from 'react-native';
 
 import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { SymptomContainer } from '@/components/SymptomContainer';
+import headache from '@/assets/icons/headache.png';
+import acne from '@/assets/icons/acne.png';
+import backache from '@/assets/icons/backache.png';
+import bloating from '@/assets/icons/bloating.png';
+import cramps from '@/assets/icons/cramps.png';
+import cravings from '@/assets/icons/cravings.png';
+import depression from '@/assets/icons/depression.png';
+import nausea from '@/assets/icons/nausea.png';
+
+const symptoms = [
+  {
+    name: 'Headache',
+    icon: headache,
+  },
+  {
+    name: 'Acne',
+    icon: acne,
+  },
+  {
+    name: 'Backache',
+    icon: backache,
+  },
+  {
+    name: 'Bloating',
+    icon: bloating,
+  },
+  {
+    name: 'Cramps',
+    icon: cramps,
+  },
+  {
+    name: 'Cravings',
+    icon: cravings,
+  },
+  {
+    name: 'Depression',
+    icon: depression,
+  },
+  {
+    name: 'Nausea',
+    icon: nausea,
+  },
+]
 
 export default function HomeScreen() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
+    <SafeAreaView style={styles.container}>
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Hello World!</ThemedText>
-        <HelloWave />
+        <ThemedText type="title">Hello, Nidhi!</ThemedText>
+      </ThemedView>
+      <ThemedView style={styles.headerContainer}>
+        <ThemedText type="subtitle">Day 11</ThemedText>
+        <ThemedText type="title">Follicular Phase</ThemedText>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
+        <ThemedText type="subtitle">How are you feeling?</ThemedText>
+        <ThemedText type="defaultSemiBold">Log your symptoms</ThemedText>
         <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({ ios: 'cmd + d', android: 'cmd + m' })}
-          </ThemedText>{' '}
-          to open developer tools.
+          <SymptomContainer symptoms={symptoms}/>
         </ThemedText>
       </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this starter app.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          When you're ready, run{' '}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+  </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    display: 'flex',
+    padding: 32,
+  },
   titleContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 8,
+    paddingBottom: 16,
+  },
+  headerContainer: {
+    
+    alignItems: 'center',
+    gap: 8,
+    paddingBottom: 16,
   },
   stepContainer: {
     gap: 8,
