@@ -26,8 +26,8 @@ export function SymptomContainer({ symptoms }: SymptomContainerProps) {
         activeOpacity={0.8}>
         <Collapsible title="Log your symptoms">
         <ThemedView style={styles.content}>
-          {symptoms.map((symptom) => (
-          <ThemedView style={styles.symptomContainer}>
+          {symptoms.map((symptom, idx) => (
+          <ThemedView style={styles.symptomContainer} key={idx}>
             <ThemedText type="defaultSemiBold">{symptom.name}</ThemedText>
             <Image source={symptom.icon} style={styles.icon}/>
           </ThemedView>

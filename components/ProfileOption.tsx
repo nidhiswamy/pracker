@@ -16,7 +16,7 @@ export function ProfileOption({ title, children }: ProfileOptionProps) {
   const theme = useColorScheme() ?? 'light';
 
   return (
-    <ThemedView>
+    <ThemedView style={styles.container}>
       <TouchableOpacity
         style={styles.heading}
         onPress={() => setIsOpen((value) => !value)}
@@ -33,6 +33,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 6,
+  },
+  container: {
+    marginTop: 32,
+    backgroundColor: Colors.dark.tint,
+
   },
   content: {
     marginTop: 6,

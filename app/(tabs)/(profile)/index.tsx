@@ -7,19 +7,16 @@ import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ProfileOption } from '@/components/ProfileOption';
+import AccountScreen from './account';
 
-export default function TabTwoScreen() {
+export default function Profile() {
   return (
       <SafeAreaView style={styles.container}>
         <ThemedView style={styles.titleContainer}>
           <ThemedText type="title">Profile</ThemedText>
         </ThemedView>
         <ThemedText>Welcome to your profile!</ThemedText>
-        <ProfileOption title="Account">  
-          <ThemedView style={styles.headerImage}>
-            <ThemedText type="title">Account Settings</ThemedText>
-          </ThemedView>
-        </ProfileOption>
+        <ProfileOption title="Account" children={<AccountScreen />} />
       </SafeAreaView>
   );
 }
